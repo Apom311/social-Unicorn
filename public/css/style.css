@@ -1,0 +1,487 @@
+:root {
+  --color-primary: #6863f9;
+  --color-primary-light: hsl(242, 91%, 69%, 18%);
+  --color-primary-variant: #5854c7;
+  --color-red: #da0f3f;
+  --color-red-light: hsl(346, 87%, 46%, 15%);
+  --color-green: #00c476;
+  --color-green-light: hsl(156, 100%, 38%, 15%);
+  --color-gray-900: #1e1e66;
+  --color-gray-700: #2d2b7c;
+  --color-gray-300: rgba(242, 242, 254, 0.3);
+  --color-gray-200: rgba(242, 242, 254, 0.7);
+  --color-white: #f2f2fe;
+  --color-bg: #0f0f3e;
+
+  --transition: all 300ms ease;
+
+  --container-width-lg: 74%;
+  --container-width-md: 88%;
+  --form-width: 40%;
+
+  --card-border-radius-1: 0.3rem;
+  --card-border-radius-2: 0.5rem;
+  --card-border-radius-3: 0.8rem;
+  --card-border-radius-4: 2rem;
+  --card-border-radius-5: 5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  appearance: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+main {
+  margin-top: 6em;
+  background: tra;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--color-gray-200);
+  overflow-x: hidden;
+  background: var(--color-bg);
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  width: var(--container-width-lg);
+  max-width: 1800px;
+  margin-inline: auto;
+}
+
+section {
+  margin-top: 3rem;
+  width: 100vw;
+}
+
+/* add to posts on index if there's no featured post. eg. search results page*/
+/* ADDED AFTER TUTORIAL */
+.section__extra-margin {
+  margin-top: 7rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin: 1rem 0;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0.8rem 0 0.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+a {
+  color: var(--color-white);
+  transition: var(--transition);
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================================== DM Buttons ================================================================================== */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-horse-head {
+  color: pink;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+/* ============================================================================== NAV ================================================================================== */
+
+nav {
+  background: var(--color-primary);
+  width: 100vw;
+  height: 4.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.nav__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.nav__items {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav__items li a {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-gray-900);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+p {
+  margin-right: 35px;
+}
+
+/* ============================================================================== Button ================================================================================== */
+
+.card {
+  /* border-radius: var(--card-border-radius-5) !important; */
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category__button {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--card-border-radius-2);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.card-header-title {
+  background-color: black;
+  color: white;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.category__button:hover {
+  color: var(--color-white);
+}
+
+.card-content {
+  background-color: #f8f8f8;
+  color: black;
+  border-radius: 0px 0px 8px 8px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+.comments {
+  color: black;
+  align-items: center;
+  padding: 12px;
+}
+
+.comment-text {
+  background-color: #c7cedd;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.comment-meta {
+  color: #00000059;
+  margin: auto;
+  backdrop-filter: off;
+}
+
+/* /////Dark mode /////*/
+/*-------Dark Mode ------- */
+
+body.dark {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+body.dark main {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+body.dark .nav__container {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+body.dark footer {
+  background: linear-gradient(
+    -45deg,
+    #e73c7e,
+    #bbce12,
+    #23d5ab,
+    #ee7752,
+    #6863f9
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 20em;
+  color: black;
+}
+
+body.dark footer,
+body.dark .card-content,
+body.dark .comments {
+  background: linear-gradient(
+    -45deg,
+    #e73c7e,
+    #bbce12,
+    #23d5ab,
+    #ee7752,
+    #6863f9
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: black;
+}
+
+body.dark .card-header-title {
+  background: linear-gradient(
+    -45deg,
+    #23d5ab,
+    #7a3b8a,
+    #23d5ab,
+    #8f21d8,
+    #6863f9
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: black;
+}
+
+.title {
+  color: black;
+}
+
+input {
+  width: 60%;
+  height: 40px;
+  background: #e0dede9d;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  max-width: 300px;
+}
+
+.button {
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: var(--color-primary-variant);
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  max-width: 300px;
+}
+
+.loginP {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.signupP {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+form {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+}
+form * {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-bg);
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.comment-form {
+  background-color: var(--color-primary-light);
+  color: black;
+  /* position: absolute; */
+  align-items: flex-end;
+  justify-content: space-between;
+  top: 0%;
+  /* left: 0%; */
+  position: relative;
+  margin-top: 128px;
+}
+
+.comment-form-div {
+  align-items: center;
+  justify-content: center;
+}
+
+#formButton {
+  margin: auto;
+  width: auto;
+}
+
+#textAreaComment {
+  min-height: 50px;
+  min-width: 275px;
+  border-radius: 3px;
+}
+
+.loginHead {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.signup {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.is-pulled-right {
+  color: rgba(0, 0, 0, 0.556);
+  margin-right: 5px;
+}
+
+.button-is-warning-div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.button.is-warning {
+  background-color: #ffdd57;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+  width: 115px;
+  margin-top: -35px;
+}
+
+.button.is-danger {
+  background-color: #f14668;
+  border-color: transparent;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
+.delete-post-btn {
+  background-color: rgb(241, 82, 82);
+}
